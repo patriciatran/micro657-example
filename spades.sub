@@ -1,11 +1,11 @@
 # Provide HTCondor with the name of your .sif file and universe information
-#universe = container
-#container_image = docker://staphb/spades:4.2.0
+universe = container
+container_image = docker://staphb/spades:4.2.0
 
 executable = spades.sh
-arguments = $(sample) $(request_cpus)
+arguments = $(request_cpus) $(sample)
 
-#transfer_input_files = reads/$(sample)_R1.fastq.gz, reads/$(sample)_R2.fastq.gz
+transfer_input_files = reads/$(sample)_R1.fastq.gz, reads/$(sample)_R2.fastq.gz
 
 log = logs/assembly_$(sample).log
 error = logs/assembly_$(sample).err
@@ -19,9 +19,9 @@ request_cpus = 1
 request_memory = 1GB
 request_disk = 2GB    
 
-queue 100000
-#queue sample from (
-#	SampleA
-#	SampleB
-#	SampleC
-#)
+queue sample from (
+#	ERR2653804
+	ERR2653803
+	ERR2653802
+	ERR2653801
+)

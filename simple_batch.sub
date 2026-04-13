@@ -1,0 +1,13 @@
+executable = simple_batch.sh
+
+arguments = $(Process)
+
+log = logs/simple_batch_$(Cluster)_$(Process).log
+output = logs/simple_batch_$(Cluster)_$(Process).out
+error = logs/simple_batch_$(Cluster)_$(Process).err
+
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+queue 100

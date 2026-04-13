@@ -4,7 +4,9 @@ container_image = docker://staphb/spades:4.2.0
 
 executable = spades.sh
 
-#transfer_input_files = reads/$(sample)_R1.fastq.gz, reads/$(sample)_R2.fastq.gz
+arguments = $(request_cpus)
+
+transfer_input_files = reads/ERR2653804_R1.fastq.gz, reads/ERR2653804_R2.fastq.gz
 
 log = logs/assembly_$(sample).log
 error = logs/assembly_$(sample).err
@@ -15,7 +17,7 @@ want_campus_pools = true
 want_ospool = true
 
 request_cpus = 16
-request_memory = 1GB
-request_disk = 5GB    
+request_memory = 16GB
+request_disk = 10GB    
 
 queue
