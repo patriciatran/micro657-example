@@ -1,18 +1,16 @@
-# Provide HTCondor with the name of your .sif file and universe information
 universe = container
 container_image = docker://staphb/spades:4.2.0
 
-executable = spades.sh
+executable = spades_one_sample.sh
 
 arguments = $(request_cpus)
 
 transfer_input_files = reads/ERR2653804_R1.fastq.gz, reads/ERR2653804_R2.fastq.gz
 
-log = logs/assembly_$(sample).log
-error = logs/assembly_$(sample).err
-output = logs/assembly_$(sample).out
+log = logs/assembly_ERR2653804.log
+error = logs/assembly_ERR2653804.err
+output = logs/assembly_ERR2653804.out
 
-#requirements = (HasCHTCStaging == true) && (OpSysMajorVer > 7)
 want_campus_pools = true
 want_ospool = true
 
