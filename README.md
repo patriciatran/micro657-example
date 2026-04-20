@@ -27,9 +27,14 @@ Moving on, the next two examples build upon the concept of submitting multiple j
 - Introduces the concept of using variables and using them in the `arguments` line of the submit file.
 
 # Set up
-While I will not demonstrate these scripts live in class, if you'd like to do this after, you will need to create a CHTC account and log into the server. Refer to the slides from class for a video demonstration.
 
-To reproduce the analysis in the video first, login into your server account
+While I will not demonstrate these scripts live in class, if you'd like to do this after, you will need to create a CHTC account and log into the server.
+
+- Request an account: https://chtc.cs.wisc.edu/uw-research-computing/form.html
+- How to login: https://chtc.cs.wisc.edu/uw-research-computing/connecting
+
+To reproduce the analysis in the video first, log into your account:
+Your login information will be sent by email upon account creation.
 
 ```
 ssh netid@address
@@ -148,7 +153,7 @@ condor_submit spades.sub
 ```
 
 > [!NOTE]
-> To generalize a script and scale up your work, you can modify the line that begins with "queue". The format is `queue variable from list`. Each item in the list will be a distinct job. As such, you can use the variable anywhere in the submit file. In this example, the variable is $(sample), and it is used in the transfer_input_files line.
+> To generalize a script and scale up your work, you can modify the line that begins with "queue". The format is `queue variable from list`. Each item in the list will be a distinct job. As such, you can use the variable anywhere in the submit file. In this example, the variable is `$(sample)`, and it is used in the `transfer_input_files=` line.
 
 
 
