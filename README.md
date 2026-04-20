@@ -4,18 +4,27 @@ These scripts demonstrates some of the concepts during the guest lecture on high
 
 A link to the slides is available here: https://go.wisc.edu/43mku5 [netID login required]
 
-# Repository structure
+# Repository contents:
 
-There are 3 pairs of scripts in this repository:
+There are 3 pairs (`.sh` and `.sub`) of scripts in this repository:
 
-1 - **simple_batch** : demonstrates how HTCondor can submit multiple (hundreds!) of jobs at the same time. Learning how to use the queue statement and the `condor_watch_q` commands to keep track of job. Starting to recognize some of the variables (such as `$(Process)` or `$(Cluster)` to better understand jobs)
+1 - **simple_batch** : 
+- Demonstrates how HTCondor can submit multiple (hundreds!) of jobs at the same time. 
+- Learning how to use the queue statement and the `condor_watch_q` commands to keep track of job. 
+- Starting to recognize some of the variables (such as `$(Process)` or `$(Cluster)` to better understand jobs)
 
-Moving on, the next two examples build upong the concept of submitting multiple jobs, this time, using a more appropriate bioinformatics analysis scenario. In this case, a user wants to assembly paired-end Illumina reads obtained from four distinct E. coli samples. 
+Moving on, the next two examples build upon the concept of submitting multiple jobs, this time, using a more appropriate bioinformatics analysis scenario. In this case, a user wants to assembly paired-end Illumina reads obtained from four distinct E. coli samples. 
 
 
-2 - **spades_one_sample** : example of how to run a bioinformatics analysis on the cluster. Introduces the concept of container images (`container_image`) and pulling from container repository. Also introduces more complex executable scripts (`.sh`) file that includes pre-job completion steps (e.g. `tar` on the output folder for correctly exporting files)
+2 - **spades_one_sample** : 
+- example of how to run a bioinformatics analysis on the cluster. 
+- Introduces the concept of container images (`container_image`) and pulling from container repository. 
+- Also introduces more complex executable scripts (`.sh`) file that includes pre-job completion steps (e.g. `tar` on the output folder for correctly exporting files)
 
-3 - **spades** : an extension of the spades_one_sample example, but now on multiple samples. Students can compare the 2 scripts to identify differences. Introduces the concept of using variables and using them in the `arguments` line of the submit file.
+3 - **spades** : 
+- an extension of the spades_one_sample example, but now on multiple samples. 
+- Students can compare the 2 scripts to identify differences. 
+- Introduces the concept of using variables and using them in the `arguments` line of the submit file.
 
 # Set up
 While I will not demonstrate these scripts live in class, if you'd like to do this after, you will need to create a CHTC account and log into the server. Refer to the slides from class for a video demonstration.
@@ -39,7 +48,10 @@ ls
 
 # Simple batch jobs
 
+(This is the code used in video from the slides)
+
 The first script `simple_batch.sub` does not need any input data. You can submit it and track its status by typing:
+
 ```
 condor_submit simple_batch.sub
 condor_watch_q
