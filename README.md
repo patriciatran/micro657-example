@@ -2,8 +2,6 @@
 
 These scripts demonstrates some of the concepts during the guest lecture on high throughput computing for microbiologists, as part of micro657 at UW-Madison, presented by Dr. Patricia Tran.
 
-A link to the slides is available here: https://go.wisc.edu/43mku5 [netID login required]
-
 # Repository contents:
 
 There are 3 pairs (`.sh` and `.sub`) of scripts in this repository:
